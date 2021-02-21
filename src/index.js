@@ -1,3 +1,5 @@
+import _ from "lodash";
+
 function component() {
   if (process.env.NODE_ENV !== "production") {
     console.log("Looks like we are in development mode!");
@@ -9,6 +11,7 @@ function component() {
   element.classList.add("hello");
 
   element.appendChild(btn);
+  console.log(_.join(["index", "module", "loaded!"], " "));
   return element;
 }
 const element = component();
