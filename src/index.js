@@ -1,15 +1,8 @@
-function component() {
-  if (process.env.NODE_ENV !== "production") {
-    console.log("Looks like we are in development mode!");
-  }
-  var btn = document.createElement("button");
-  btn.innerHTML = "Click me and check the console!";
+import a from "./a.js";
+import b from "./b.js";
 
-  const element = document.createElement("div");
-  element.classList.add("hello");
+const c = () => {
+  console.log(a, b);
+};
 
-  element.appendChild(btn);
-  return element;
-}
-const element = component();
-document.body.appendChild(element);
+c();
