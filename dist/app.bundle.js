@@ -1,4 +1,4 @@
-/******/ (function(modules) { // webpackBootstrap是一个自执行函数，modules 即为存放所有模块的对象，对象中的每一个属性都是一个函数
+/******/ (function(modules) { // webpackBootstrap是一个自执行函数，modules 即为存放所有模块的对象，这个对象以文件路径为 key，以文件内容为 value
 /******/ 	// 安装过的模块都存放在这里面，作用是把已经加载过的模块缓存在内存中，提升性能
 /******/ 	var installedModules = {};
 /******/
