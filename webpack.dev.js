@@ -1,7 +1,10 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
+const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
 
-module.exports = merge(common, {
+const smp = new SpeedMeasurePlugin();
+
+const devConfig = merge(common, {
   mode: "development",
   devtool: "inline-source-map",
   devServer: {
@@ -17,3 +20,5 @@ module.exports = merge(common, {
     ],
   },
 });
+
+module.exports = smp.wrap(devConfig);
