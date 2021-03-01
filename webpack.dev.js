@@ -1,6 +1,8 @@
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common.js");
 const SpeedMeasurePlugin = require("speed-measure-webpack-plugin");
+const BundleAnalyzerPlugin = require("webpack-bundle-analyzer")
+  .BundleAnalyzerPlugin;
 
 const smp = new SpeedMeasurePlugin();
 
@@ -19,6 +21,7 @@ const devConfig = merge(common, {
       },
     ],
   },
+  plugins: [new BundleAnalyzerPlugin()],
 });
 
 module.exports = smp.wrap(devConfig);
