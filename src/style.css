@@ -1,4 +1,5 @@
-.hello {
-    color: red;
-    /* background: url('./icon.png'); */
-  }
+.rect{
+    background-color: turquoise;
+    width: 100px;
+    height: 100px;
+}

@@ -1,15 +1,11 @@
-function component() {
-  if (process.env.NODE_ENV !== "production") {
-    console.log("Looks like we are in development mode!");
-  }
-  var btn = document.createElement("button");
-  btn.innerHTML = "Click me and check the console!";
+import css from "./style.css";
 
-  const element = document.createElement("div");
-  element.classList.add("hello");
+console.log(css);
+let div = document.createElement("div");
+div.className = "rect";
+div.innerText = "hello div";
+div.classList.add('rect');
 
-  element.appendChild(btn);
-  return element;
-}
-const element = component();
-document.body.appendChild(element);
+let body = document.getElementsByTagName("body")[0];
+
+body.appendChild(div);
