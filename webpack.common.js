@@ -25,8 +25,23 @@ module.exports = {
   /* SplitChunksPlugin,插件可以将公共的依赖模块提取到已有的 entry chunk 中，
   或者提取到一个新生成的 chunk。让我们使用这个插件，将前面示例中重复的 lodash 模块去除： */
   optimization: {
+    usedExports: true,
     splitChunks: {
-      chunks: "all",
+      cacheGroups: {
+        commons: {
+          chunks: "all",
+          minChunks: 2,
+          maxInitialRequests: 5,
+          minSize: 0,
+        },
+        vendor: {
+          test: /node_modules/,
+          chunks: "initial",
+          name: "vendor",
+          priority: 10,
+          enforce: true,
+        },
+      },
     },
   },
 };
